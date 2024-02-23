@@ -29,4 +29,10 @@ INSERT INTO employees(
 )
 VALUES 
 ('Ярослав', '1980-01-01', 1500, 'email3@email.com'),
-('Микитa', '1993-01-01', 1000, 'email4@email.com');
+('Павло', '1993-01-01', 1000, 'email4@email.com');
+
+INSERT INTO employees(
+  first_name, birthday, salary, email
+)
+VALUES 
+('Артем', '1990-01-01', 200, 'email5@email.com');
