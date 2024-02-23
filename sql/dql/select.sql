@@ -1,26 +1,45 @@
--- команда на отримання даних з бази даних (БД)
--- повернути всі дані з таблиці користувачів
 SELECT *
-FROM users;
+FROM employees
+WHERE id = 3;
 
--- повернути дані зі стовпчиків id, first_name, last_name
-SELECT id, first_name, last_name
-FROM users;
+SELECT *
+FROM employees
+WHERE salary < 800;
 
--- повернути дані зі стовпчиків id, first_name, last_name
--- і дані з balance але помножені на 40
-SELECT id, first_name, last_name "Last Name",balance AS "USD balance", balance * 40 AS "UAH balance"
-FROM users;
+SELECT *
+FROM employees
+WHERE salary <> 500;
 
--- повернути всіх чоловіків
+SELECT salary, vacation
+FROM employees
+WHERE first_name = 'Eugene';
+
 SELECT *
-FROM users
-WHERE is_male = true;
--- або
+FROM employees
+WHERE first_name = 'Petro';
+
 SELECT *
-FROM users
-WHERE is_male;
--- для жінок
+FROM employees
+WHERE first_name <> 'Petro';
+
+---
+
 SELECT *
-FROM users
-WHERE NOT is_male;
+FROM employees
+WHERE EXTRACT(year from age(birthday)) = 27 OR salary = 1000;
+
+SELECT *
+FROM employees
+WHERE EXTRACT(year from age(birthday)) IN (26, 27, 28);
+
+SELECT *
+FROM employees
+WHERE 
+  (EXTRACT(year from age(birthday)) > 23 
+  AND EXTRACT(year from age(birthday)) <= 27) 
+  OR (salary > 400 AND salary <= 1000);
+
+-- --BETWEEN
+-- SELECT *
+-- FROM employees
+-- WHERE (EXTRACT(year from age(birthday)) BETWEEN 30 AND 34)

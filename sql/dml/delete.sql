@@ -1,12 +1,11 @@
 DELETE FROM employees
-WHERE 
+WHERE id = 7
 RETURNING *;
 
--- видалення конкретних користувачів
--- всіх користувачів з висотою 1.5 м
-DELETE FROM users
-WHERE height = 1.5;
+DELETE FROM employees
+WHERE first_name = 'Микола'
+RETURNING *;
 
--- видалення конкрентного запису
-DELETE FROM users
-WHERE id = 8;
+DELETE FROM employees
+WHERE vacation > 20
+RETURNING *;

@@ -4,7 +4,15 @@ WHERE first_name = 'Павло'
 RETURNING *
 
 UPDATE employees 
-SET birthday = '1987-01-01'
+SET birthday = '1999-02-02'
+WHERE id = 4
+RETURNING *
+
+UPDATE employees 
+SET birthday = make_date(
+  1987, 
+  EXTRACT(month from birthday)::integer, 
+  EXTRACT(day from birthday)::integer)
 WHERE id = 4
 RETURNING *
 
