@@ -1,28 +1,32 @@
---add into table
-INSERT INTO users 
-VALUES 
-(1, 'Test', 'Testovych', 6000.01, true, '2007-08-27');
-
-INSERT INTO users 
-( balance, first_name, last_name, is_male, birthday )
-VALUES 
-(6000.01, 'Test', 'Testovych', true, '2007-08-27');
-
-INSERT INTO books (
-  book_name, synopsis, author, is_avaible, price, pages_amount
+INSERT INTO workers(
+  first_name, birthday, salary
 )
-VALUES (
-  'Harry Potter', 'the boy who lived come to die', 
-  'J. Rowling', true, 123, 356
-);
+VALUES 
+('Test', '2007-08-27', 6000);
 
-INSERT INTO books (
-  book_name, synopsis, author, is_avaible, price, pages_amount
+INSERT INTO workers(
+  first_name, birthday, email
 )
-VALUES (
-  'Harry Potter 2', 'the boy who lived again come to die', 
-  'J. Rowling', false, 246, 456
-),(
-  'Harry Potter 3', 'the boy who lived tow times come to die again', 
-  'J. Rowling', true, 369, 556
-);
+VALUES 
+('Test', '2007-08-27', '');
+
+--employees
+
+INSERT INTO employees(
+  first_name, birthday, salary, email
+)
+VALUES 
+('Микитa', '1990-01-01', 600, 'email@email.com');
+--
+INSERT INTO employees(
+  first_name, birthday, salary, email
+)
+VALUES 
+('Світлана', '1990-01-01', 1200, 'email2@email.com');
+--
+INSERT INTO employees(
+  first_name, birthday, salary, email
+)
+VALUES 
+('Ярослав', '1980-01-01', 1500, 'email3@email.com'),
+('Микитa', '1993-01-01', 1000, 'email4@email.com');
